@@ -33,31 +33,12 @@ it("ends on game loss", function () {
     />
   );
 
-  // const buttons = container.querySelectorAll("button");
-  const wrongBtn1 = container.querySelector("button[value='x']");
-  const wrongBtn2 = container.querySelector("button[value='c']");
-  const wrongBtn3 = container.querySelector("button[value='b']");
-  const wrongBtn4 = container.querySelector("button[value='y']");
-  const wrongBtn5 = container.querySelector("button[value='i']");
-  const wrongBtn6 = container.querySelector("button[value='m']");
-  const wrongBtn7 = container.querySelector("button[value='q']");
+  const wrongVals = ['x', 'i', 'c', 'b', 'm', 'q', 'd']
 
-  fireEvent.click(wrongBtn1);
-  fireEvent.click(wrongBtn2);
-  fireEvent.click(wrongBtn3);
-  fireEvent.click(wrongBtn4);
-  fireEvent.click(wrongBtn5);
-  fireEvent.click(wrongBtn6);
-  fireEvent.click(wrongBtn7);
-
-  // // make {maxWrong} number of wrong guesses
-  // for (const i = 0; i < maxWrong + 1; i++) {
-  //   for (const button of buttons) {
-  //     if (words[0].indexOf(button.value) === -1) {
-  //       fireEvent.click(button);
-  //     }
-  //   }
-  // }
+  for(let i=0; i<wrongVals.length -1; i++) {
+    const wrongBtn = container.querySelector(`button[value='${wrongVals[i]}']`)
+    fireEvent.click(wrongBtn);
+  }
 
   expect(container.querySelector('.Snowman-msg')).toBeInTheDocument();
   expect(container.querySelector('img')).toBeInTheDocument();
