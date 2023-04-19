@@ -59,6 +59,6 @@ it("ends on game loss", function () {
   //   }
   // }
 
-  expect(container.querySelector("#lossMsg")).toBeInTheDocument();
+  expect(container.querySelector('.Snowman-msg')).toBeInTheDocument();
   expect(container.querySelector('img')).toBeInTheDocument();
 });
