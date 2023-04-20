@@ -39,7 +39,8 @@ it("ends on game loss", function () {
     const wrongBtn = container.querySelector(`button[value='${wrongVals[i]}']`)
     fireEvent.click(wrongBtn);
   }
-
+  //TODO: set expectation that buttons exist prior
+  //to last guess and removed once the game is over
   expect(container.querySelector('.Snowman-msg')).toBeInTheDocument();
   expect(container.querySelector('img')).toBeInTheDocument();
 });
